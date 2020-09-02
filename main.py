@@ -3,6 +3,7 @@ import random
 import curses
 import animations.fire as fire
 import animations.star as star
+import animations.spaceship as spaceship
 
 TIC_TIMEOUT = 0.1
 STAR_SYMBOLS = '+*.:'
@@ -27,6 +28,7 @@ def draw(canvas):
         )
 
     coroutines.append(fire.fire(canvas, row_center, column_center))
+    coroutines.append(spaceship.animate_spaceship(canvas, row_center, column_center))
 
     # main event loop
     while True:
