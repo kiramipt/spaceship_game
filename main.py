@@ -28,7 +28,7 @@ def draw(canvas):
                 symbol=random.choice(STAR_SYMBOLS))
         )
 
-    # coroutines.append(fire.fire(canvas, row_center, column_center))
+    coroutines.append(fire.fire(canvas, row_center, column_center))
     coroutines.append(spaceship.animate_spaceship(canvas))
 
     # main event loop
