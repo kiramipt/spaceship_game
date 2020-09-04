@@ -1,3 +1,5 @@
+import asyncio
+
 SPACE_KEY_CODE = 32
 LEFT_KEY_CODE = 260
 RIGHT_KEY_CODE = 261
@@ -75,3 +77,8 @@ def get_frame_size(text):
     rows = len(lines)
     columns = max([len(line) for line in lines])
     return rows, columns
+
+
+async def await_for(cnt=5):
+    for i in range(cnt):
+        await asyncio.sleep(0)

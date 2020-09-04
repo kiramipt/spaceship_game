@@ -13,6 +13,7 @@ STARS_COUNT = 150
 def draw(canvas):
     curses.curs_set(False)
     canvas.border()
+    canvas.nodelay(True)
 
     row_max, column_max = canvas.getmaxyx()
     row_center, column_center = row_max // 2, column_max // 2
@@ -27,8 +28,8 @@ def draw(canvas):
                 symbol=random.choice(STAR_SYMBOLS))
         )
 
-    coroutines.append(fire.fire(canvas, row_center, column_center))
-    coroutines.append(spaceship.animate_spaceship(canvas, row_center, column_center))
+    # coroutines.append(fire.fire(canvas, row_center, column_center))
+    coroutines.append(spaceship.animate_spaceship(canvas))
 
     # main event loop
     while True:

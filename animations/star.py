@@ -1,11 +1,6 @@
-import asyncio
 import curses
 import random
-
-
-async def await_for(cnt=5):
-    for i in range(cnt):
-        await asyncio.sleep(0)
+from tools.curses_tools import await_for
 
 
 async def blink(canvas, row, column, symbol='*'):
